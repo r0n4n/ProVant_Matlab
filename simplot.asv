@@ -1,25 +1,22 @@
-function affiche( data,vect,struct , Np)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+function simplot( data,vect,struct , Np)
+% SIMPLOT create a subplot figure with data types given in input. It uses
+% the Struct_array global variable created by the Data_reader file. So run
+% this script before. 
+% 
+%   DATA  is a cell array of the data you want to display 
+%   VECT is the vector from where you want to get the data (input, output, reference... ) 
+%   struct is a cell array of 
+
 
 global Struct_array
 
-
-
 for i=1:length(data)
-    %     s = findfield(Struct_array.(struct{1}),data{i}) ;
-    %     if (isstruct(s))
-    %         fields = fieldnames (s)
-    %         for j=1:length(fields)
-    %             affiche(fields,struct) ;
-    %         end
-    %     else
-    
+      
     
     sizeArray =zeros(1,length(struct)+2) ;
     for j=1:length(struct)
         
-        array = findfield(Struct_array.(struct{j}).(vect),data{i}) ;
+        array = Struct_array.(struct{j}).(vect).(data{i}) ;
         sizeArray(j) = length(array) ;
     end
     sizeArray(j+1) = length(Struct_array.(struct{j}).time) ;
@@ -33,7 +30,7 @@ for i=1:length(data)
     
     subplot(length(data),1,i)
             for j=1:length(struct)
-                array = findfield(Struct_array.(struct{j}).(vect),data{i})  ;
+                array = Struct_array.(struct{j}).(vect).(data{i})  ;
                 plot(Struct_array.(struct{j}).time(1:N),array(1:N))
                 hold on
                 %legend(struct{j}) ;

@@ -1,3 +1,6 @@
+%% This script give some commands to interface matlab with a ros server %%
+
+
 %% connecting to the ros server 
 
 rosinit('192.168.98.150') ; 

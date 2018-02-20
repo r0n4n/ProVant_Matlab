@@ -6,6 +6,7 @@ simplot({'x','y','z'},'input',{'MIL'})
 
 %% ref 
 figure 
+
 simplot({'x','y','z'},'ref',{'MIL'})
 
 
@@ -57,7 +58,7 @@ simplot({'yaw'},'ref',{'MIL'})
 
 simplot({'dotx','doty','dotz'},'input',{'MIL'})
 
-%% 
+%% This 
 diff = zeros(length(seq)-1,1) ; 
 for i=1:length(seq)-1
     diff(i) = seq(i+1)-seq(i) ; 

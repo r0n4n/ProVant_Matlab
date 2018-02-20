@@ -42,7 +42,7 @@ simplot({'y'},'input',{'SIL'})
 
 %% 
 simplot({'y'},'ref',{'SIL'})
-%%
+
 
 %%
 simplot({'yaw'},'err',{'SIL'})
@@ -61,7 +61,7 @@ simplot({'dotx','doty','dotz'},'input',{'SIL'})
 
 simplot({'dotx','doty','dotz'},'ref',{'SIL'})
 
-%% 
+%% Control ouputs 
 
 simplot({'Thrustdir','Thrustesq','RefaR','RefaL'},'output',{'SIL'})
 legend('SIL')

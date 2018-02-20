@@ -1,13 +1,14 @@
-%% This script 
+%% This script take the data from the HIL, SIL and MIL files to format them and create one structure containing all the data formated 
 
 clear Struct_array 
 %clear all 
 
-%% Set the type of the model 
+%% Set the type of the model : the state vector is not the same 
+
 %model = 'VANT2.0 with load' ;  
 model = 'VANT2.0' ;
 
-%% Setting of the indexs of the model 
+%% Set the indexes of the model 
 
 indexState = containers.Map ; 
 switch model
@@ -70,6 +71,9 @@ indexOutput ('RefaL') = 4 ;
 
 global Struct_array %% the structure which will contain the data of all the simulations  
 
+% s is the substructure template for each simulation type (SIL, MIL and
+% HIL) 
+
 s.output=table ; 
 s.input=table ; 
 s.ref=table ; 
@@ -110,12 +114,12 @@ Struct_array.MIL = s ;
 Struct_array.MIL.input= array2table(state_MIL) ;  
 Struct_array.MIL.output= array2table(output_MIL) ;
 Struct_array.MIL.err=  array2table(err_MIL) ;
-Struct_array.MIL.ref=array2table(ref_MIL) ; 
+Struct_array.MIL.ref= array2table(ref_MIL) ; 
 Struct_array.MIL.time= timesec +  timensec/10^9 ;
 
 
 
-%% Section to create the structure of table 
+%% Section to create the structure of tables
 
 outputKeys = keys(indexOutput) ; 
 stateKeys = keys(indexState) ; 
