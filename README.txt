@@ -11,7 +11,7 @@ The Data_reader.m script read data from files to format them in order to easily 
 For exemple if you want to compare the UAV trajectory in SIL mode and HIL mode. 
 
 The SIL and the HIL data are respectively in the SIL_data and HIL_dat folder.
-But your data here to analyse them. 
+Put your data here to analyse them. 
 
 The MIL data are in some .mat files : 
     * erro.mat
