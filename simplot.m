@@ -44,6 +44,7 @@ for i=1:length(data)
 %     hold on
 %     plot(Struct_array.(struct{2}).time,findfield(Struct_array.(struct{2}).(vect),data{i}))
      ylabel(data{i})
+     xlabel('time (s)')
 %     legend(struct{1},struct{2})
 %     %end
 end

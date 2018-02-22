@@ -63,5 +63,5 @@ simplot({'dotx','doty','dotz'},'ref',{'SIL'})
 
 %% Control ouputs 
 
-simplot({'Thrustdir','Thrustesq','RefaR','RefaL'},'output',{'SIL'})
+simplot({'Thrustdir','Thrustesq','RefaR','RefaL'},'output',{'HIL'})
 legend('SIL')
